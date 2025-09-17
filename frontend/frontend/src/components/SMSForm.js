@@ -1,7 +1,6 @@
 // src/components/SMSForm.js
 import React, { useState } from 'react';
-import dotenv from 'dotenv';
-dotenv.config();
+
 
 const API_URL = process.env.API_URL || 'http://localhost:3000';
 
