@@ -1,5 +1,9 @@
 // src/components/EmailForm.js
 import React, { useState } from 'react';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const API_URL = process.env.API_URL || 'http://localhost:3000';
 
 const EmailForm = () => {
   const [emailData, setEmailData] = useState({ to: '', subject: '', body: '' });
@@ -16,7 +20,7 @@ const EmailForm = () => {
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:3000/send-email', {
+      const response = await fetch(`${API_URL}/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

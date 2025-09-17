@@ -1,5 +1,9 @@
 // src/components/SMSForm.js
 import React, { useState } from 'react';
+import dotenv from 'dotenv';
+dotenv.config();
+
+const API_URL = process.env.API_URL || 'http://localhost:3000';
 
 const SMSForm = () => {
   const [smsData, setSmsData] = useState({ phoneNumber: '', message: '' });
@@ -16,7 +20,7 @@ const SMSForm = () => {
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:3000/send-sms', {
+      const response = await fetch(`${API_URL}/send-sms`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
