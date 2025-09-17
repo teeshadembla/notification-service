@@ -19,7 +19,7 @@ const EmailForm = () => {
     setMessage('');
 
     try {
-      const response = await fetch('http://13.234.202.82/send-email', {
+      const response = await fetch('http://localhost:3001/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
