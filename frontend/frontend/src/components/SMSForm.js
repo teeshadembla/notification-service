@@ -19,7 +19,7 @@ const SMSForm = () => {
     setMessage('');
 
     try {
-      const response = await fetch('http://localhost:3001/send-sms', {
+      const response = await fetch(`${API_URL}/send-sms`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
